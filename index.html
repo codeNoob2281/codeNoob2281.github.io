@@ -49,6 +49,7 @@
              //goto error page
         }else{
             var user=data;
+            console.log(data);
             let html=template('tpl',{"user":user});
             document.body.innerHTML=html;
         }
