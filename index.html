@@ -2,11 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>nodeNoob2281的个人主页</title>
+    <title>首页</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/template-web.js"></script>
+    <script src="js/index.js"></script>
+<!--    <script src="js/jquery-3.6.0.min.js"></script>-->
 </head>
 <body>
+<!--art-template模板-->
+<script type="text/html" id="tpl">
 <!--头部导航栏-->
 
 <!--头部背景区域-->
@@ -14,22 +19,40 @@
 <!--    头像栏-->
     <div id="header_logo">
     <img src="resource/img/user_logo.jpg" alt="用户头像" class="img-circle" id="user_logo">
-    <p id="username">codeNoob2281</p>
+    <p id="username">{{user.username}}</p>
+     <p style="color: #22c674;font-size: medium;">{{user.description}}</p>
     <a href="https://www.xuexi.cn/"><button id="btn_focus" class="btn-primary">+&nbsp关注</button></a>
     </div>
 <!--    个人信息-->
     <div id="user_info">
         <table>
             <tr style="color:#a7a7a7"><td>关注数</td><td>粉丝数</td><td>获赞数</td></tr>
-            <tr><td>65535</td><td>114514w</td><td>666.6w</td></tr>
-            <tr  style="height: 60px;color: orange;font-size: medium"><td colspan="3">天空是蔚蓝色，窗外有千纸鹤。</td></tr>
+            <tr><td>{{user.count1}}</td><td>{{user.count2}}w</td><td>{{user.count3}}w</td></tr>
         </table>
     </div>
-
-    <h1>啊吧啊吧。。。</h1>
-
 </header>
+<h1>啊吧啊吧。。。</h1>
+</script>
 
 
+
+
+
+
+
+
+
+<!--art-template渲染-->
+<script>
+    readJSONFile("/myGithubPage/data/userBasicINFO.json",function (err,data){
+        if(err){
+             //goto error page
+        }else{
+            var user=data;
+            let html=template('tpl',{"user":user});
+            document.body.innerHTML=html;
+        }
+    })
+</script>
 </body>
 </html>
