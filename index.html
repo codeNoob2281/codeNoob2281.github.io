@@ -4,56 +4,83 @@
     <meta charset="UTF-8">
     <title>首页</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="css/index.css">
     <script src="js/template-web.js"></script>
     <script src="js/index.js"></script>
-<!--    <script src="js/jquery-3.6.0.min.js"></script>-->
+
 </head>
 <body>
 <!--art-template模板-->
 <script type="text/html" id="tpl">
-<!--头部导航栏-->
+    <!--头部导航栏-->
 
-<!--头部背景区域-->
-<header id="header">
-<!--    头像栏-->
-    <div id="header_logo">
-    <img src="resource/img/user_logo.jpg" alt="用户头像" class="img-circle" id="user_logo">
-    <p id="username">{{user.username}}</p>
-     <p style="color: #22c674;font-size: medium;">{{user.description}}</p>
-    <a href="https://www.xuexi.cn/"><button id="btn_focus" class="btn-primary">+&nbsp关注</button></a>
+    <!--头部背景区域-->
+    <header id="header">
+        <!--    头像栏-->
+        <div id="header_logo">
+            <img src="resource/img/user_logo.jpg" alt="用户头像" class="img-circle" id="user_logo">
+            <p id="username">{{user.username}}</p>
+            <p style="color: #22c674;font-size: medium;">{{user.description}}</p>
+            <a href="https://www.xuexi.cn/">
+                <button id="btn_focus" class="btn-primary">+&nbsp关注</button>
+            </a>
+        </div>
+        <!--    个人信息-->
+        <div id="user_info">
+            <table>
+                <tr style="color:#a7a7a7">
+                    <td>关注数</td>
+                    <td>粉丝数</td>
+                    <td>获赞数</td>
+                </tr>
+                <tr>
+                    <td>{{user.count1}}</td>
+                    <td>{{user.count2}}w</td>
+                    <td>{{user.count3}}w</td>
+                </tr>
+            </table>
+        </div>
+    </header>
+    <!--<h1>啊吧啊吧。。。</h1>-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-sm" href="index.html">{{user.username}}的个人主页</a>
+            </div>
+            <div class="navbar-collapse collapse" role="navigation" >
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">每日鸡汤 </a></li>
+                    <li><a href="#">ta说啥 </a></li>
+                    <li><a href="#">社交牛逼症 </a></li>
+                    <li><a href="#">关于 </a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-<!--    个人信息-->
-    <div id="user_info">
-        <table>
-            <tr style="color:#a7a7a7"><td>关注数</td><td>粉丝数</td><td>获赞数</td></tr>
-            <tr><td>{{user.count1}}</td><td>{{user.count2}}w</td><td>{{user.count3}}w</td></tr>
-        </table>
-    </div>
-</header>
-<h1>啊吧啊吧。。。</h1>
 </script>
-
-
-
-
-
-
-
 
 
 <!--art-template渲染-->
 <script>
-    readJSONFile("/data/userBasicINFO.json",function (err,data){
-        if(err){
-             //goto error page
-        }else{
-            var user=data;
-            console.log(data);
-            let html=template('tpl',{"user":user});
-            document.body.innerHTML=html;
+    readJSONFile("/myGithubPage/data/userBasicINFO.json", function (err, data) {
+        if (err) {
+            //goto error page
+        } else {
+            var user = data;
+            let html = template('tpl', {"user": user});
+            document.body.innerHTML = html;
         }
     })
+
 </script>
 </body>
 </html>
