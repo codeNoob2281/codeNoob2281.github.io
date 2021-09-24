@@ -14,8 +14,3 @@ function readJSONFile(dataPath, callback) {
     }
 }
 
-
-window.onload = function () {
-
-
-}

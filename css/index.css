@@ -43,10 +43,6 @@
     position: absolute;
     top:200px;
     right: 20px;
-
-
-
-
 }
 
 #user_info table {
@@ -55,6 +51,17 @@
 
 #user_info table td {
     width: 100px;
+}
+.content-page{
+    background-color: #cbcbcb;
+    width: 700px;
+    margin-left: 600px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.img-circle{
+    height: 70px;
+    width: 70px;
 }
 
 
