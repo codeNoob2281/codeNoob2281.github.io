@@ -1,4 +1,6 @@
-
+body{
+    overflow-x: hidden;
+}
 #header {
     margin-top:50px;
     display: block;
@@ -54,8 +56,8 @@
 }
 .content-page{
     background-color: #cbcbcb;
-    width: 700px;
-    margin-left: 600px;
+    width:50%;
+    margin-left:25%;
     margin-top: 20px;
     border-radius: 5px;
 }
