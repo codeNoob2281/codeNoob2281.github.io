@@ -1,0 +1,40 @@
+@keyframes fade-in {
+    from{opacity: 0%}
+    to{opacity: 100%}
+}
+#content{
+    background: #5b4282;
+    height: 45em;
+    text-align: center;
+    overflow-x:hidden ;
+}
+.container_jiTang{
+    height: 25em;
+    position: relative;
+    top:200px;
+}
+.container_jiTang #date{
+    display: block;
+    font-size: 3.5em;
+    color: white;
+    position: relative;
+    top:12px;
+    animation-name:fade-in ;
+    animation-duration: 2s;
+}
+.container_jiTang .container_title{
+    margin-top: 12px;
+    font-size: 2.5em;
+    color: white;
+    animation-name:fade-in ;
+    animation-duration: 2s;
+}
+.container_jiTang #jiTang_get_Btn{
+    margin-top: 12px;
+    animation-name:fade-in ;
+    animation-duration: 2s;
+}
+#container_jiTang_table{
+    display: inline-block;
+    width: 700px;
+}
