@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+ </script>
 
 
 <!--    内容-->
@@ -110,7 +111,7 @@
             <hr/>
         </div>
     </footer>
-</script>
+
 
 
 <!--art-template渲染-->
@@ -121,7 +122,7 @@
             //goto error page
         } else {
             let html = template('tpl', {"user": user});
-            document.body.innerHTML = html;
+            document.body.innerHTML = html+document.body.innerHTML;
         }
     });
 </script>
