@@ -19,7 +19,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                        data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -27,7 +28,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">{{user.username}}的个人主页</a>
             </div>
-            <div class="navbar-collapse collapse" role="navigation" >
+            <div class="navbar-collapse collapse" role="navigation">
                 <form class="navbar-form navbar-right">
                     <input type="text" class="form-control" placeholder="fake Search...">
                 </form>
@@ -44,7 +45,7 @@
     <header id="header">
         <!--    头像栏-->
         <div id="header_logo">
-            <img src="resource/img/user_logo.jpg" alt="用户头像"  id="user_logo">
+            <img src="resource/img/user_logo.jpg" alt="用户头像" id="user_logo">
             <p id="username">{{user.username}}</p>
             <p style="color: #22c674;font-size: medium;">{{user.description}}</p>
             <a href="https://www.xuexi.cn/">
@@ -70,23 +71,83 @@
     <!--瞎编的说说-->
     {{each contents }}
     <div class="content-page">
-      <table style="width: 100%"  id="content-table">
-          <tr><td rowspan="2" style="width: 90px;text-align: center;height: 90px;"><img src="resource/img/user_logo.jpg" class="img-circle"></td>
-              <td colspan="2"><a class="text-warning" style="font-size:20px" href="#">{{user.username}}</a></td></tr>
-          <tr><td colspan="2"><p style="color: grey">{{$value.date}}</p></td></tr>
-          <tr><td colspan="3"><p style="font-size: 18px;margin-left: 10px">{{$value.content}}</p></td></tr>
-          <tr>
-              <td colspan="2">
-                  <hr style="width: 90%;color: grey"/>
-              <ul class="nav nav-pills" role="tablist" style="position: relative;margin-top: 10px;margin-bottom: 10px;left: 60%;width: 40%;">
-              <li role="presentation" class="active" style="width: 32%"><a href="#">点赞<span class="badge">{{$value.likesCount}}</span></a></li>
-              <li role="presentation" style="width: 32%"><a href="#" >评论<span class="badge">{{$value.commentsCount}}</span></a></li>
-                  <li role="presentation" style="width: 32%"><a href="#">转发<span class="badge">{{$value.forwardsCount}}</span></a></li>
-              </ul>
-          </td></tr>
-      </table>
+        <table style="width: 100%" id="content-table">
+            <tr>
+                <td rowspan="2" style="width: 90px;text-align: center;height: 90px;"><img
+                        src="resource/img/user_logo.jpg" class="img-circle"></td>
+                <td colspan="2"><a class="text-warning" style="font-size:20px;position: relative;top:10px;" href="#">{{user.username}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><p style="color: grey;">{{$value.date}}</p></td>
+            </tr>
+            <tr>
+                <td colspan="3"><h3 style="margin-left: 10px">{{$value.title}}</h3></td>
+            </tr>
+            <tr>
+                <td colspan="3"><p style="font-size: 18px;margin-left: 10px">{{$value.content}}</p></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr style="width: 90%;color: grey"/>
+                    <ul class="nav nav-pills" role="tablist"
+                        style="position: relative;margin-top: 10px;margin-bottom: 10px;left: 60%;width: 40%;">
+                        <li role="presentation" class="active" style="width: 32%"><a href="#">点赞<span class="badge">{{$value.likesCount}}</span></a>
+                        </li>
+                        <li role="presentation" style="width: 32%"><a href="#">评论<span class="badge">{{$value.commentsCount}}</span></a>
+                        </li>
+                        <li role="presentation" style="width: 32%"><a href="#">转发<span class="badge">{{$value.forwardsCount}}</span></a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
     </div>
     {{/each}}
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-top">
+                <div class="col-md-6 col-lg-6">
+                    <h4>
+                        <a href="https://github.com/" style="color: black"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg></a>
+                    </h4>
+                    <p>powered by GitHub</p>
+                </div>
+                <div class="col-md-6  col-lg-6">
+                    <div class="row about">
+
+                        <div class="col-sm-3">
+                            <h4>联系方式</h4>
+                            <ul class="list-unstyled">
+                                <li><img src="resource/img/icon_qq.png" width="20px" height="20px">
+                                    <a href="http://wpa.qq.com/msgrd?v=3&uin=2281461058&site=qq&menu=yes" target="_blank">&nbsp;QQ</a></li>
+                                <li><img src="resource/img/icon_mail.png" width="20px" height="20px">
+                                    <a href="mailto:2281461058@qq.com" target="_blank">&nbsp;邮箱</a></li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                    <a href="https://github.com/codeNoob2281/" target="_blank" style="position: relative;top:-5px;">&nbsp;GitHub</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>友链</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.bootcss.com/" target="_blank">Bootstrap</a></li>
+                                <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                                <li><a href="https://aui.github.io/art-template/zh-cn/" target="_blank">ART-TEMPLATE</a></li>
+                                <li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <hr/>
+
+        </div>
+    </footer>
 
 </script>
 
@@ -94,21 +155,18 @@
 <!--art-template渲染-->
 <script>
     // 回调地狱adouki
-    readJSONFile("/data/userBasicINFO.json", function (err, user) {
+    readJSONFile("/myGithubPage/data/userBasicINFO.json", function (err, user) {
         if (err) {
             //goto error page
         } else {
-            readJSONFile("/data/article.json",function (err,contents){
-                if(err){
+            readJSONFile("/myGithubPage/data/article.json", function (err, contents) {
+                if (err) {
                     //goto error page
-                }else{
-                    let html = template('tpl', {"user": user,"contents":contents});
+                } else {
+                    let html = template('tpl', {"user": user, "contents": contents});
                     document.body.innerHTML = html;
                 }
             });
-
-
-
 
 
         }
