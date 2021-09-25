@@ -46,7 +46,7 @@ function showSentence(){
 }
 //随机选择句子
 function randomSentence(){
-      readJSONFile('/myGithubPage/data/sentence.json',function (err,data){
+      readJSONFile('/data/sentence.json',function (err,data){
            if(err){
                //go to error page
            }else{
