@@ -1,7 +1,11 @@
 // 读取json文件
-function readJSONFile(dataPath, callback) {
+function readJSONFile(dataPath,isInGitHub, callback) {
+    var realDataPath=dataPath;
+    if(!isInGitHub){
+        realDataPath='/myGithubPage'+realDataPath;
+    }
     var request = new XMLHttpRequest();
-    request.open("get", dataPath);
+    request.open("get", realDataPath);
     request.send("null");
     request.onload = function () {
         if (request.status == 200) {
@@ -13,3 +17,5 @@ function readJSONFile(dataPath, callback) {
         }
     }
 }
+
+

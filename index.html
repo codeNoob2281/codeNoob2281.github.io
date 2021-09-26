@@ -12,6 +12,7 @@
     <script src="js/template-web.js"></script>
     <script src="js/universalJS.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/webConfig.js"></script>
 
 </head>
 <body>
@@ -156,11 +157,11 @@
 <!--art-template渲染-->
 <script>
     // 回调地狱adouki
-    readJSONFile("/data/userBasicINFO.json", function (err, user) {
+    readJSONFile("/data/userBasicINFO.json", isInGitHUb,function (err, user) {
         if (err) {
             //goto error page
         } else {
-            readJSONFile("/data/article.json", function (err, contents) {
+            readJSONFile("/data/article.json", isInGitHUb,function (err, contents) {
                 if (err) {
                     //goto error page
                 } else {

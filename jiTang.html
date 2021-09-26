@@ -8,11 +8,12 @@
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="css/jiTang.css">
+    <link rel="stylesheet" href="css/jiTang.css">
     <link rel="stylesheet" href="css/universalCss.css">
     <script src="js/template-web.js"></script>
     <script src="js/universalJS.js"></script>
-        <script src="js/jiTang.js"></script>
+    <script src="js/jiTang.js"></script>
+    <script src="js/webConfig.js"></script>
 </head>
 <body>
 <!--art-template模板-->
@@ -41,88 +42,91 @@
             </div>
         </div>
     </div>
- </script>
+</script>
 
 
 <!--    内容-->
-  <main id="content">
-      <div class="container_jiTang" id="container_jiTang_lead">
-              <span id="date">Error</span>
-             <p class="container_title">快来领取今日的鸡汤吧!</p>
-          <a class="btn btn-outline-inverse btn-lg" id="jiTang_get_Btn" onclick="showSentence()">点击GET今日箴言</a>
-      </div>
-      <div class="container_jiTang" id="container_jiTang_show" style="display: none">
-           <table id="container_jiTang_table">
-               <tr><td><p class="container_title" id="json_content">“Error”</p></td></tr>
-               <tr><td style="text-align: right"><p class="container_title" id="json_author">---Error</p></td></tr>
-           </table>
-      </div>
+<main id="content">
+    <div class="container_jiTang" id="container_jiTang_lead">
+        <span id="date">Error</span>
+        <p class="container_title">快来领取今日的鸡汤吧!</p>
+        <a class="btn btn-outline-inverse btn-lg" id="jiTang_get_Btn" onclick="showSentence()">点击GET今日箴言</a>
+    </div>
+    <div class="container_jiTang" id="container_jiTang_show" style="display: none">
+        <table id="container_jiTang_table">
+            <tr>
+                <td><p class="container_title" id="json_content">“Error”</p></td>
+            </tr>
+            <tr>
+                <td style="text-align: right"><p class="container_title" id="json_author">---Error</p></td>
+            </tr>
+        </table>
+    </div>
 
-  </main>
+</main>
 
-    <!--    页脚-->
-    <footer class="footer">
-        <div class="container">
-            <div class="row footer-top">
-                <div class="col-md-6 col-lg-6">
-                    <h4>
-                        <a href="https://github.com/" style="color: black">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                 class="bi bi-github" viewBox="0 0 16 16">
-                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                            </svg>
-                        </a>
-                    </h4>
-                    <p>Powered By GitHub</p>
-                </div>
-                <div class="col-md-6  col-lg-6">
-                    <div class="row about">
+<!--    页脚-->
+<footer class="footer">
+    <div class="container">
+        <div class="row footer-top">
+            <div class="col-md-6 col-lg-6">
+                <h4>
+                    <a href="https://github.com/" style="color: black">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                             class="bi bi-github" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    </a>
+                </h4>
+                <p>Powered By GitHub</p>
+            </div>
+            <div class="col-md-6  col-lg-6">
+                <div class="row about">
 
-                        <div class="col-sm-3">
-                            <h4>联系方式</h4>
-                            <ul class="list-unstyled">
-                                <li><img src="resource/img/icon_qq.png" width="20px" height="20px">
-                                    <a href="http://wpa.qq.com/msgrd?v=3&uin=2281461058&site=qq&menu=yes"
-                                       target="_blank">&nbsp;QQ</a></li>
-                                <li><img src="resource/img/icon_mail.png" width="20px" height="20px">
-                                    <a href="mailto:2281461058@qq.com" target="_blank">&nbsp;邮箱</a></li>
-                                <li>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-                                         fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                                    </svg>
-                                    <a href="https://github.com/codeNoob2281/" target="_blank"
-                                       style="position: relative;top:-5px;">&nbsp;GitHub</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-3">
-                            <h4>友链</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="https://www.bootcss.com/" target="_blank">Bootstrap</a></li>
-                                <li><a href="https://github.com/" target="_blank">GitHub</a></li>
-                                <li><a href="https://aui.github.io/art-template/zh-cn/" target="_blank">ART-TEMPLATE</a>
-                                </li>
-                                <li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
-                            </ul>
-                        </div>
+                    <div class="col-sm-3">
+                        <h4>联系方式</h4>
+                        <ul class="list-unstyled">
+                            <li><img src="resource/img/icon_qq.png" width="20px" height="20px">
+                                <a href="http://wpa.qq.com/msgrd?v=3&uin=2281461058&site=qq&menu=yes"
+                                   target="_blank">&nbsp;QQ</a></li>
+                            <li><img src="resource/img/icon_mail.png" width="20px" height="20px">
+                                <a href="mailto:2281461058@qq.com" target="_blank">&nbsp;邮箱</a></li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
+                                     fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                                <a href="https://github.com/codeNoob2281/" target="_blank"
+                                   style="position: relative;top:-5px;">&nbsp;GitHub</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4>友链</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.bootcss.com/" target="_blank">Bootstrap</a></li>
+                            <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                            <li><a href="https://aui.github.io/art-template/zh-cn/" target="_blank">ART-TEMPLATE</a>
+                            </li>
+                            <li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <hr/>
         </div>
-    </footer>
-
+        <hr/>
+    </div>
+</footer>
 
 
 <!--art-template渲染-->
 <script>
     // 回调地狱adouki
-    readJSONFile("/data/userBasicINFO.json", function (err, user) {
+    readJSONFile("/data/userBasicINFO.json", isInGitHUb, function (err, user) {
         if (err) {
             //goto error page
         } else {
             let html = template('tpl', {"user": user});
-            document.body.innerHTML = html+document.body.innerHTML;
+            document.body.innerHTML = html + document.body.innerHTML;
         }
     });
 </script>

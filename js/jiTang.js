@@ -7,21 +7,7 @@ window.onload=function(){
 
 
 }
-// 读取json文件
-function readJSONFile(dataPath, callback) {
-    var request = new XMLHttpRequest();
-    request.open("get", dataPath);
-    request.send("null");
-    request.onload = function () {
-        if (request.status == 200) {
-            var json = JSON.parse(request.responseText);
-            callback(null, json);
-        } else {
-            callback("读取失败", null);
 
-        }
-    }
-}
 // 获取今日日期
 function getTodayDate(){
      let date=new Date();
@@ -46,11 +32,10 @@ function showSentence(){
 }
 //随机选择句子
 function randomSentence(){
-      readJSONFile('/data/sentence.json',function (err,data){
+      readJSONFile('/data/sentence.json',isInGitHUb,function (err,data){
            if(err){
                //go to error page
            }else{
-               console.log(data);
                var id=parseInt(Math.random()*((data.length-1)-0)+0);
                document.getElementById("json_content").innerText=data[id].content;
                document.getElementById("json_author").innerText="---"+data[id].author;
