@@ -1,40 +1,93 @@
 @keyframes fade-in {
-    from{opacity: 0%}
-    to{opacity: 100%}
+    from {
+        opacity: 0%
+    }
+    to {
+        opacity: 100%
+    }
 }
-#content{
+
+#content {
     background: #5b4282;
     height: 45em;
     text-align: center;
-    overflow-x:hidden ;
+    overflow-x: hidden;
 }
-.container_jiTang{
+
+.container_jiTang {
     height: 25em;
     position: relative;
-    top:200px;
+    top: 200px;
 }
-.container_jiTang #date{
+
+.container_jiTang #date {
     display: block;
     font-size: 3.5em;
     color: white;
     position: relative;
-    top:12px;
-    animation-name:fade-in ;
+    top: 12px;
+    animation-name: fade-in;
     animation-duration: 2s;
 }
-.container_jiTang .container_title{
+
+ .container_title {
     margin-top: 12px;
     font-size: 2.5em;
     color: white;
-    animation-name:fade-in ;
+    animation-name: fade-in;
     animation-duration: 2s;
 }
-.container_jiTang #jiTang_get_Btn{
+
+.container_jiTang #jiTang_get_Btn {
     margin-top: 12px;
-    animation-name:fade-in ;
+    animation-name: fade-in;
     animation-duration: 2s;
 }
-#container_jiTang_table{
+
+#container_jiTang_table {
     display: inline-block;
     width: 700px;
+}
+
+#mcmod {
+    height: 50em;
+    text-align: center;
+    background-image: url("../resource/img/mcmod_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#mcmod-blinkTitle_div {
+    height: 50px;
+    width: 25%;
+    position: relative;
+    top: 50px;
+}
+
+#mcmod-blinkTitle_div #mcmod-blinkTitle {
+    color: yellow;
+    font-size: 18px;
+    transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg); /* IE 9 */
+    -moz-transform: rotate(-15deg); /* Firefox */
+    -webkit-transform: rotate(-15deg); /* Safari 和 Chrome */
+    -o-transform: rotate(-15deg); /* Opera */
+    transition: font-size linear 1s;
+    z-index: 1;
+}
+#mcmod_randomBtn{
+    color: white;
+    border-color: white;
+    transition: background-color linear 200ms;
+}
+#mcmod_randomBtn:hover{
+    background: white;
+    color: black;
+
+
+}
+#mcmod_container_title{
+    margin-top: 20px;
+    font-size: 2.5em;
+    color: white;
 }

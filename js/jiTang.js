@@ -8,7 +8,10 @@ window.onload=function(){
  document.getElementById('date').innerText=getTodayDate();
  //选择箴言
     randomSentence();
-
+    //缩放mcmod文字
+    setInterval(mcmod_FontAction,500);
+    //获取mcmod随机链接
+    mcmod_randomLink();
 
 }
 
@@ -45,4 +48,25 @@ function randomSentence(){
                document.getElementById("json_author").innerText="---"+data[id].author;
            }
       });
+}
+//mcmod部分文字先放大与缩小
+let flag=true;
+function mcmod_FontAction(){
+    const maxSize=25;
+    const minSize=18;
+    let title=document.getElementById("mcmod-blinkTitle");
+    if(flag){
+        title.style.fontSize=maxSize+"px";
+        flag=!flag;
+    }else{
+        title.style.fontSize=minSize+"px";
+        flag=!flag;
+    }
+}
+//生成mcmod随机链接
+function mcmod_randomLink(){
+    const maxPage=4854;
+    var num=parseInt(Math.random()*(maxPage+1));
+    document.getElementById("mcmod_randomBtn").href=`https://www.mcmod.cn/class/${num}.html`;
+
 }
