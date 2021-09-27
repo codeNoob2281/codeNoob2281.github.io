@@ -1,2 +1,6 @@
-//是否部署在github
-const isInGitHUb=true;
+//是否部署在服务器
+const isOnServer=false;
+//是否使用github pages服务
+const isOnGithub=false;
+//是否使用gitee pages服务
+const isOnGitee=true;

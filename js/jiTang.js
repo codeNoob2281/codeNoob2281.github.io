@@ -1,5 +1,9 @@
 
 window.onload=function(){
+    //检查环境
+    checkWebContent();
+    //获取运行时间并计时
+    setInterval(getPageRunTime,1000);
     // 显示日期
  document.getElementById('date').innerText=getTodayDate();
  //选择箴言
@@ -32,7 +36,7 @@ function showSentence(){
 }
 //随机选择句子
 function randomSentence(){
-      readJSONFile('/data/sentence.json',isInGitHUb,function (err,data){
+      readJSONFile('/data/sentence.json',isOnServer,function (err,data){
            if(err){
                //go to error page
            }else{

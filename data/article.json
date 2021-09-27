@@ -1,5 +1,13 @@
 [
-{
+  {
+    "title": "页面更新",
+    "content": "页脚能够根据page服务显示相应公司图标及链接,添加了网站运行时间显示功能",
+    "date": "2021.9.27 19:39:10",
+    "likesCount": 12,
+    "commentsCount": 3,
+    "forwardsCount": 7
+  },
+  {
     "title": "备用链接",
     "content": "通过gitee page服务，已部署备用网站",
     "date": "2021.9.26 21:17:10",
