@@ -18,11 +18,10 @@ function getTranslateResult(){
         if(!data[0].trans){
             table.innerHTML=searchHTML;
             document.getElementById("trans-text").value=text;
-            document.getElementById("trans-result").value="找不到";
+            document.getElementById("trans-result").value=text;
         }else{
             showTransList(text,data);
             document.getElementById("trans-result").value=getTransText(text,data);
-
         }
     })
 }
@@ -52,18 +51,23 @@ function getTransText(text,data){
     let tranRes=text;
     for(let i in data){
            let token=data[i].name;
-           let primaryChoose=data[i].trans[0];
-           if(primaryChoose){
-               tranRes=tranRes.replace(token,primaryChoose);
+           if(data[i].trans) {
+               let primaryChoose = data[i].trans[0];
+               if (primaryChoose) {
+                   tranRes = tranRes.replaceAll(token, primaryChoose);
+               }
            }
         }
+    console.log(tranRes);
     return tranRes;
 }
 
 
 //表单
 let searchHTML=`
-       <tr><td colspan="2" style="text-align: left"><button onclick="getTranslateResult()" class="btn btn-primary" id="trans-btn">&nbsp;&nbsp;翻&nbsp;&nbsp;&nbsp;&nbsp;译&nbsp;&nbsp;</button></td></tr>
+              <tr><td style="text-align: left"><button onclick="getTranslateResult()" class="btn btn-primary" id="trans-btn">&nbsp;&nbsp;翻&nbsp;&nbsp;&nbsp;&nbsp;译&nbsp;&nbsp;</button></td>
+             <td style="text-align: right"><a href="https://lab.magiconch.com/nbnhhsh/" target="_blank">词库及API支持...</a></td>
+        </tr>
         <tr>
             <td style="text-align: left"><textarea class="form-control" id="trans-text" rows="10" placeholder="请输入原文..."></textarea></td>
             <td><textarea class="form-control" id="trans-result" rows="10" disabled="false"></textarea></td>
