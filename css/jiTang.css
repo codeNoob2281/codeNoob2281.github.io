@@ -9,7 +9,7 @@
 
 #content {
     background: #5b4282;
-    height: 45em;
+    height: 43em;
     text-align: center;
     overflow-x: hidden;
 }
@@ -81,11 +81,11 @@
     transition: background-color linear 200ms;
 }
 #mcmod_randomBtn:hover{
-    background: white;
+    background-color: white;
     color: black;
-
-
 }
+
+
 #mcmod_container_title{
     margin-top: 20px;
     font-size: 2.5em;

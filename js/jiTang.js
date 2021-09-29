@@ -8,10 +8,13 @@ window.onload=function(){
  document.getElementById('date').innerText=getTodayDate();
  //选择箴言
     randomSentence();
+    //随机选择mcmod闪烁标题
+    mcmod_getRandomTitle();
     //缩放mcmod文字
     setInterval(mcmod_FontAction,500);
     //获取mcmod随机链接
     mcmod_randomLink();
+    setInterval(mcmod_randomLink,5000);
 
 }
 
@@ -69,4 +72,10 @@ function mcmod_randomLink(){
     var num=parseInt(Math.random()*(maxPage+1));
     document.getElementById("mcmod_randomBtn").href=`https://www.mcmod.cn/class/${num}.html`;
 
+}
+//随机闪烁标题
+function mcmod_getRandomTitle(){
+    var title=["我不做人了,JOJO!","真相永远只有一个!","所以说，不要停下来啊...","You Jump,I Jump!","EEExplosion!","移除了HIM!"];
+    var id=parseInt(Math.random()*(title.length-0)+0);
+    document.getElementById("mcmod-blinkTitle").innerText=title[id];
 }
