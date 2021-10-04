@@ -7,4 +7,15 @@ window.onload=function (){
 }
 
 
+//关注按钮显示"已关注"(你被骗了)
+function changeBtnStyle(){
+    let btn=document.getElementById("btn_focus");
+    btn.innerText="你被骗了!";
+    btn.style.width="80px";
+    btn.style.background="black";
+    btn.style.opacity="70%";
+    btn.style.border="white";
+}
+
+
 

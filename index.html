@@ -46,17 +46,48 @@
     <header id="header">
         <!--    头像栏-->
         <div id="header_logo">
-            <img src="resource/img/user_logo.jpg" alt="用户头像" id="user_logo">
-            <p id="username">{{user.username}}</p>
-            <p style="color: #22c674;font-size: medium;">{{user.description}}</p>
-            <a href="https://www.xuexi.cn/">
-                <button id="btn_focus" class="btn-primary">+&nbsp关注</button>
-            </a>
+
+             <table>
+                 <tr>
+                     <td rowspan="2"><img src="resource/img/user_logo.jpg" alt="用户头像" id="user_logo"></td>
+                     <td><span id="username">{{user.username}}</span><span id="header-lv">LV999</span></td>
+                 </tr>
+                 <tr>
+                     <td><span style="color:white;font-size: small;">{{user.description}}</span></td>
+                     <td style="width: 900px;">
+                         <a href="https://www.bilibili.com/video/BV1GJ411x7h7?p=1" target="_blank">
+                             <button id="btn_focus" class="btn btn-primary" onclick="changeBtnStyle()">+&nbsp关注</button>
+                         </a>
+                         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#btn_messageModal" id="btn_message">
+                             私信
+                         </button>
+                         <!-- Modal -->
+                         <div class="modal fade" id="btn_messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                             <div class="modal-dialog" role="document">
+                                 <div class="modal-content">
+                                     <div class="modal-header">
+                                         <h5 class="modal-title" id="exampleModalLabel">Error!</h5>
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                             <span aria-hidden="true">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class="modal-body">
+                                         私信个锤子
+                                     </div>
+                                     <div class="modal-footer">
+                                         <button type="button" class="btn btn-primary" data-dismiss="modal">返回</button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </td>
+                 </tr>
+             </table>
         </div>
         <!--    个人信息-->
         <div id="user_info">
             <table>
-                <tr style="color:#a7a7a7">
+                <tr style="color:#474747;font-weight: bold">
                     <td>关注数</td>
                     <td>粉丝数</td>
                     <td>获赞数</td>
@@ -107,7 +138,7 @@
     {{/each}}
 </script>
 <!--    页脚-->
-    <footer class="footer">
+    <footer class="footer" style="text-align: left">
         <div class="container">
             <div class="row footer-top">
                 <div class="col-md-6 col-lg-6" id="footer-logo"></div>
