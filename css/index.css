@@ -2,19 +2,21 @@ body{
     overflow-x: hidden;
     background-image: url("../resource/img/body_bg.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 2000px 100%;
+    background-position: center;
     background-attachment:fixed;
     text-align: center;
 }
 #header{
     margin-top:50px;
     display: inline-block;
-    width: 1300px;
+    width: 80%;
     height: 270px;
     background-image: url("../resource/img/header_bg.jpg");
     background-color: whitesmoke;
     background-repeat: no-repeat;
-    background-size: 100% 200px;
+    background-size: 1600px 200px;
+    background-position: center top;
     text-align: left;
     border-radius: 5px;
 
@@ -56,8 +58,6 @@ body{
 
 #header_logo #btn_focus {
     width: 70px;
-    margin-left: 700px;
-
 }
 #header_logo #btn_message {
     width: 70px;
@@ -69,7 +69,7 @@ body{
     display: inline-block;
     width: 300px;
     position:relative;
-    left:1000px;
+    left:60%;
     margin-top: 20px;
 }
 

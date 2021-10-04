@@ -13,7 +13,7 @@
     <script src="js/universalJS.js"></script>
     <script src="js/index.js"></script>
     <script src="js/webConfig.js"></script>
-
+   <script src="js/teXiao.js"></script>
 </head>
 <body>
 <!--art-template模板-->
@@ -45,16 +45,16 @@
     <!--头部背景区域-->
     <header id="header">
         <!--    头像栏-->
-        <div id="header_logo">
+        <div id="header_logo"  style="width:95%;">
 
-             <table>
+             <table style="width: 100%" >
                  <tr>
-                     <td rowspan="2"><img src="resource/img/user_logo.jpg" alt="用户头像" id="user_logo"></td>
+                     <td rowspan="2" style="width: 80px"><img src="resource/img/user_logo.jpg" alt="用户头像" id="user_logo"></td>
                      <td><span id="username">{{user.username}}</span><span id="header-lv">LV999</span></td>
                  </tr>
                  <tr>
                      <td><span style="color:white;font-size: small;">{{user.description}}</span></td>
-                     <td style="width: 900px;">
+                     <td style="text-align: right">
                          <a href="https://www.bilibili.com/video/BV1GJ411x7h7?p=1" target="_blank">
                              <button id="btn_focus" class="btn btn-primary" onclick="changeBtnStyle()">+&nbsp关注</button>
                          </a>
@@ -62,7 +62,7 @@
                              私信
                          </button>
                          <!-- Modal -->
-                         <div class="modal fade" id="btn_messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                         <div class="modal fade" id="btn_messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="text-align: left">
                              <div class="modal-dialog" role="document">
                                  <div class="modal-content">
                                      <div class="modal-header">
@@ -82,21 +82,29 @@
                          </div>
                      </td>
                  </tr>
+                 <tr><td style="height: 17px;"></td></tr>
+                 <tr style="color:#474747;font-weight: bold;text-align: right;font-size:15px;">
+                     <td colspan="3" style="height: 30px;">
+                         <span>关注数</span>
+                         <span style="margin-left: 50px;">粉丝数</span>
+                         <span style="margin-left: 50px;">获赞数</span>
+                     </td>
+
+                 </tr>
+                 <tr style="text-align: right">
+                     <td colspan="3">
+                         <span>{{user.count1}}</span>
+                         <span style="margin-left: 46px;">{{user.count2}}w</span>
+                         <span style="margin-left: 43px;">{{user.count3}}w</span>
+                     </td>
+
+                 </tr>
              </table>
         </div>
         <!--    个人信息-->
         <div id="user_info">
             <table>
-                <tr style="color:#474747;font-weight: bold">
-                    <td>关注数</td>
-                    <td>粉丝数</td>
-                    <td>获赞数</td>
-                </tr>
-                <tr>
-                    <td>{{user.count1}}</td>
-                    <td>{{user.count2}}w</td>
-                    <td>{{user.count3}}w</td>
-                </tr>
+
             </table>
         </div>
     </header>
