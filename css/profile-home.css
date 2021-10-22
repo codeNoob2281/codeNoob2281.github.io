@@ -1,0 +1,47 @@
+
+
+body{
+    text-align: center;
+}
+
+.main-menubar{
+    display: inline-block;
+   list-style-type: none;
+    width:150px;
+    margin-top: 10px;
+    padding-left: 0;
+    border: 1px solid #aaaaaa;
+    padding-top: 5px;
+    background-color: whitesmoke;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #aaaaaa;
+}
+.main-menubar-title{
+    font-size: large;
+    color: #aaaaaa;
+    border-bottom:1px solid #aaaaaa;
+}
+
+.main-menubar li{
+    text-align: center;
+    height: 50px;
+    line-height: 48px;
+    font-size: 14px;
+    transition: background-color linear 200ms;
+}
+.main-menubar li:not(:first-child):hover{
+    font-weight: bold;
+    background-color: #e0e0e0;
+}
+.main-menubar-selected{
+    background-color: #979797;
+    color: white;
+}
+.main-menubar-selected:hover {
+    background-color: #979797;
+    color: white;
+}
+
+
+

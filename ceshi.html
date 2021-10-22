@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>菜鸟教程(runoob.com)</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/universalCss.css">
+  <script src="js/template-web.js"></script>
+  <script src="js/universalJS.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/webConfig.js"></script>
+  <script src="js/teXiao.js"></script>
+
+  <script>
+      $("button").click(function(){
+        $("p").hide();
+      });
+  </script>
+</head>
+
+<body>
+<!--art-template模板-->
+<script type="text/html" id="tpl">
+  <!--头部导航栏-->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">{{user.username}}的个人主页</a>
+      </div>
+      <div class="navbar-collapse collapse" role="navigation" style="overflow: hidden">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="jiTang.html">每日鸡汤 </a></li>
+          <li><a href="taSayThat.html">ta说啥 </a></li>
+          <li><a href="view-profile/home.html">社交牛逼症 </a></li>
+          <li><a href="#">关于 </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</script>
+
+
+
+
+
+<!--art-template渲染-->
+<script>
+  readJSONFile("/data/userBasicINFO.json", isOnServer, function (err, user) {
+    if (err) {
+      //goto error page
+    } else {
+      let html = template('tpl', {"user": user});
+      document.body.innerHTML = html + document.body.innerHTML;
+    }
+  });
+</script>
+
+
+<h2>这是一个标题</h2>
+<p>这是一个段落。</p>
+<p>这是另一个段落。</p>
+<button>点我</button>
+</body>
+</html>

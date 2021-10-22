@@ -11,15 +11,15 @@
 
     <link rel="stylesheet" href="css/jiTang.css">
     <link rel="stylesheet" href="css/universalCss.css">
-    <script src="js/template-web.js"></script>
+    <script src="js/vue.min.js"></script>
     <script src="js/universalJS.js"></script>
     <script src="js/jiTang.js"></script>
     <script src="js/teXiao.js"></script>
 
 </head>
 <body>
-<!--art-template模板-->
-<script type="text/html" id="tpl">
+<!--vue template-->
+<div id="tpl">
     <!--头部导航栏-->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -38,13 +38,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="jiTang.html">每日鸡汤 </a></li>
                     <li><a href="taSayThat.html">ta说啥 </a></li>
-                    <li><a href="#">社交牛逼症 </a></li>
+                    <li><a href="view-profile/home.html">社交牛逼症 </a></li>
                     <li><a href="#">关于 </a></li>
                 </ul>
             </div>
         </div>
     </div>
-</script>
+</div>
 
 
 <!--    每日鸡汤-->
@@ -121,14 +121,19 @@
 </footer>
 
 
-<!--art-template渲染-->
+
 <script>
     readJSONFile("/data/userBasicINFO.json", isOnServer, function (err, user) {
         if (err) {
             //goto error page
         } else {
-            let html = template('tpl', {"user": user});
-            document.body.innerHTML = html + document.body.innerHTML;
+
+            var vm=new Vue({
+               el:'#tpl',
+               data:{
+                   user:user
+               }
+            });
         }
     });
 </script>
